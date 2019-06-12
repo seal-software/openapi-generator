@@ -1,0 +1,21 @@
+
+****
+[unstyled]
+{{#infoUrl}}* *More information:* {{{infoUrl}}}{{/infoUrl}}
+{{#infoEmail}}* *Contact info:* {{{infoEmail}}}{{/infoEmail}}
+{{#version}}* *Version:* `{{{version}}}`{{/version}}
+{{#basePathWithoutHost}}* *Base path:* `{{{basePathWithoutHost}}}`{{/basePathWithoutHost}}
+{{#licenseInfo}}* *License info:* {{{licenseInfo}}}{{/licenseInfo}}
+{{#licenseUrl}}* *License URL:* {{{licenseUrl}}}{{/licenseUrl}}
+****
+
+{{{unescapedAppDescription}}}
+
+{{#hasAuthMethods}}
+=== Access
+{{#authMethods}}
+. {{#isBasic}}HTTP Basic Authentication{{/isBasic}}{{#isOAuth}}OAuth AuthorizationUrl:{{authorizationUrl}}TokenUrl:{{tokenUrl}}{{/isOAuth}}{{#isApiKey}}APIKey KeyParamName:{{keyParamName}} KeyInQuery:{{isKeyInQuery}} KeyInHeader:{{isKeyInHeader}}{{/isApiKey}}
+{{/authMethods}}
+{{/hasAuthMethods}}
+
+

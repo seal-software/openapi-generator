@@ -1,0 +1,21 @@
+a|
+**{{baseName}}**
+
+a|[unstyled]
+{{#unescapedDescription}}* {{{unescapedDescription}}}{{/unescapedDescription}}
+{{#vendorExtensions.x-codegen-hasExample}}* _Ex:_ `+{{example}}+`{{/vendorExtensions.x-codegen-hasExample}}
+{{#vendorExtensions.x-codegen-hasConstraints}}
+[none]
+{{>constraints}}
+{{/vendorExtensions.x-codegen-hasConstraints}}
+
+a|
+{{#isBodyParam}}{{#baseType}}link:#model_{{baseType}}[{{baseType}}]{{/baseType}}{{/isBodyParam}}
+{{^isBodyParam}}`[small]##[green]#{{dataType}}# {{#dataFormat}}({{dataFormat}}){{/dataFormat}}##`{{/isBodyParam}}
+
+a|{{#defaultValue}}`+{{{defaultValue}}}+`{{/defaultValue}}
+
+
+
+
+

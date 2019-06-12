@@ -1,0 +1,15 @@
+:openapiimports: .
+
+= OpenAPI Petstore
+
+= Overview
+
+include::{openapiimports}/overview.adoc[]
+
+= Operations
+
+include::{openapiimports}/operations.adoc[]
+
+= Models
+
+include::{openapiimports}/models.adoc[]

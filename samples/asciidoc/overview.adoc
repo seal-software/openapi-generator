@@ -1,0 +1,21 @@
+
+****
+[unstyled]
+
+
+* *Version:* `1.0.0`
+* *Base path:* `/v2`
+* *License info:* Apache-2.0
+* *License URL:* http://www.apache.org/licenses/LICENSE-2.0.html
+****
+
+This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: " \
+
+=== Access
+. APIKey KeyParamName:api_key KeyInQuery:false KeyInHeader:true
+. APIKey KeyParamName:api_key_query KeyInQuery:true KeyInHeader:false
+. HTTP Basic Authentication
+. HTTP Basic Authentication
+. OAuth AuthorizationUrl:http://petstore.swagger.io/api/oauth/dialogTokenUrl:
+
+

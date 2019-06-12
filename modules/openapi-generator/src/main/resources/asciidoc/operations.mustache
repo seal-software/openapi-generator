@@ -1,0 +1,166 @@
+
+// Operations
+
+{{#apiInfo}}
+{{#apis}}
+{{#operations}}
+
+== {{baseName}}
+
+{{#operation}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+=== {{{summary}}}{{^summary}}{{vendorExtensions.x-codegen-operationIdAsSentence}}{{/summary}}
+
+----
+{{httpMethod}} {{path}}
+----
+
+{{#isDeprecated}}_[red]#@Deprecated#_{{/isDeprecated}}
+
+{{notes}}
+
+.cURL
+[source,bash]
+----
+curl -X {{vendorExtensions.x-codegen-httpMethodUpperCase}}{{#authMethods}}{{#isApiKey}}{{#isKeyInHeader}} -H "{{keyParamName}}: [[apiKey]]"{{/isKeyInHeader}}{{/isApiKey}}{{#isBasic}}{{#hasProduces}} -H "Accept: {{#produces}}{{{mediaType}}}{{#hasMore}},{{/hasMore}}{{/produces}}"{{/hasProduces}}{{#hasConsumes}} -H "Content-Type: {{#consumes}}{{{mediaType}}}{{#hasMore}},{{/hasMore}}{{/consumes}}"{{/hasConsumes}} -H "Authorization: Basic [[basicHash]]"{{/isBasic}}{{/authMethods}} "{{basePath}}{{path}}{{#hasQueryParams}}?{{#queryParams}}{{^-first}}&{{/-first}}{{baseName}}={{vendorExtensions.x-eg}}{{/queryParams}}{{/hasQueryParams}}"
+----
+
+{{#hasAuthMethods}}
+==== Scopes
+{{#authMethods}}
+{{#scopes}}
+* `{{scope}}` : {{unescapedDescription}}
+{{/scopes}}
+{{^scopes}}* none{{/scopes}}
+{{/authMethods}}
+{{/hasAuthMethods}}
+
+==== Parameters
+
+{{#hasConsumes}}
+===== Consumes
+
+{{#consumes}}
+* `+{{mediaType}}+`
+{{/consumes}}
+{{/hasConsumes}}
+
+{{#hasPathParams}}
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+{{#pathParams}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+{{>param}}
+{{/vendorExtensions.x-codegen-shouldInclude}}
+
+{{/pathParams}}
+|===
+{{/hasPathParams}}
+
+{{#hasHeaderParams}}
+===== Header parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+{{#headerParams}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+{{>param}}
+{{/vendorExtensions.x-codegen-shouldInclude}}
+
+{{/headerParams}}
+|===
+{{/hasHeaderParams}}
+
+{{#hasBodyParam}}
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+{{#bodyParams}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+{{>param}}
+{{/vendorExtensions.x-codegen-shouldInclude}}
+{{/bodyParams}}
+|===
+{{/hasBodyParam}}
+
+{{#hasFormParams}}
+===== Form parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+{{#formParams}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+{{>param}}
+{{/vendorExtensions.x-codegen-shouldInclude}}
+
+{{/formParams}}
+|===
+{{/hasFormParams}}
+
+
+{{#hasQueryParams}}
+===== Query parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+{{#queryParams}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+{{>param}}
+{{/vendorExtensions.x-codegen-shouldInclude}}
+
+{{/queryParams}}
+|===
+{{/hasQueryParams}}
+
+==== Responses
+
+{{#hasProduces}}
+===== Produces
+
+{{#produces}}
+* `+{{mediaType}}+`
+{{/produces}}
+{{/hasProduces}}
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+{{#responses}}
+|{{{code}}}
+|{{{message}}}
+a|{{^simpleType}}{{containerType}}[{{/simpleType}}{{^isMapContainer}}{{#baseType}}link:#model_{{{baseType}}}[{{{baseType}}}]{{/baseType}}{{/isMapContainer}}{{#isMapContainer}}String, {{{baseType}}}{{/isMapContainer}}{{^simpleType}}]{{/simpleType}}
+{{/responses}}
+
+|===
+
+{{#hasExamples}}
+===== Example data
+{{#examples}}
+
+.Content-Type: {{{contentType}}}
+[source,{{x-codegen-sourceType}}]
+----
+{{{example}}}
+----
+{{/examples}}
+{{/hasExamples}}
+
+{{/vendorExtensions.x-codegen-shouldInclude}}
+{{/operation}}
+{{/operations}}
+{{/apis}}
+{{/apiInfo}}

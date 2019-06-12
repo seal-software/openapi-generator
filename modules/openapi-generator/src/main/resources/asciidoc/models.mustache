@@ -1,0 +1,38 @@
+
+// Models
+
+
+{{#models}}
+{{#model}}
+
+== {{name}}{{#title}} - {{title}}{{/title}} [[model_{{name}}]]
+
+{{#unescapedDescription}}{{{unescapedDescription}}}{{/unescapedDescription}}
+
+[cols="1m,1m",options="header"]
+|===
+|Properties|Schema
+a|
+{{#vars}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+[unstyled]
+* *{{baseName}}* : `{{#isContainer}}{{baseType}}[{{#isMapContainer}}string, {{/isMapContainer}}link:#model_{{complexType}}[{{complexType}}]{{#dataFormat}}({{{dataFormat}}}){{/dataFormat}}]{{/isContainer}}{{^isContainer}}link:#model_{{baseType}}[{{baseType}}]{{#dataFormat}}({{{dataFormat}}}){{/dataFormat}}{{/isContainer}}`
+{{#unescapedDescription}}* {{unescapedDescription}}{{/unescapedDescription}}
+{{#vendorExtensions.x-codegen-hasExample}}* _Ex:_ `+{{example}}+`{{/vendorExtensions.x-codegen-hasExample}}
+{{#vendorExtensions.x-codegen-hasConstraints}}
+[none]
+{{>constraints}}
+{{/vendorExtensions.x-codegen-hasConstraints}}
+
+{{/vendorExtensions.x-codegen-shouldInclude}}
+{{/vars}}
+
+a|[source,json]
+----
+{{{modelJson}}}
+----
+
+|===
+
+{{/model}}
+{{/models}}

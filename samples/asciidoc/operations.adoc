@@ -1,0 +1,4158 @@
+
+// Operations
+
+
+== AnotherFake
+
+=== To test special tags
+
+----
+PATCH /another-fake/dummy
+----
+
+
+
+To test special tags and operation ID starting with number
+
+.cURL
+[source,bash]
+----
+curl -X PATCH "http://petstore.swagger.io:80/v2/another-fake/dummy"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**Client**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_Client[Client]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_Client[Client]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "client" : "client"
+}
+----
+
+
+== Default
+
+=== Foo get
+
+----
+GET /foo
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/foo"
+----
+
+
+==== Parameters
+
+
+
+
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|0
+|response
+a|link:#model_inline_response_default[inline_response_default]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "string" : {
+    "bar" : "bar"
+  }
+}
+----
+
+
+== Fake
+
+=== Health check endpoint
+
+----
+GET /fake/health
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/fake/health"
+----
+
+
+==== Parameters
+
+
+
+
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|The instance started successfully
+a|link:#model_HealthCheckResult[HealthCheckResult]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "NullableMessage" : "NullableMessage"
+}
+----
+
+=== Fake outer boolean serialize
+
+----
+POST /fake/outer/boolean
+----
+
+
+
+Test serialization of outer boolean types
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/fake/outer/boolean"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**body**
+
+a|[unstyled]
+
+* _Ex:_ `+true+`
+
+a|
+link:#model_boolean[boolean]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+*/*+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|Output boolean
+a|link:#model_boolean[boolean]
+
+|===
+
+
+=== Fake outer composite serialize
+
+----
+POST /fake/outer/composite
+----
+
+
+
+Test serialization of object with outer number type
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/fake/outer/composite"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**OuterComposite**
+
+a|[unstyled]
+
+
+
+a|
+link:#model_OuterComposite[OuterComposite]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+*/*+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|Output composite
+a|link:#model_OuterComposite[OuterComposite]
+
+|===
+
+===== Example data
+
+.Content-Type: */*
+[source,text]
+----
+{
+  "my_string" : "my_string",
+  "my_number" : 0.8008281904610115,
+  "my_boolean" : true
+}
+----
+
+=== Fake outer number serialize
+
+----
+POST /fake/outer/number
+----
+
+
+
+Test serialization of outer number types
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/fake/outer/number"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**body**
+
+a|[unstyled]
+
+* _Ex:_ `+8.14+`
+
+a|
+link:#model_number[number]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+*/*+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|Output number
+a|link:#model_number[number]
+
+|===
+
+
+=== Fake outer string serialize
+
+----
+POST /fake/outer/string
+----
+
+
+
+Test serialization of outer string types
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/fake/outer/string"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**body**
+
+a|[unstyled]
+
+* _Ex:_ `+body_example+`
+
+a|
+link:#model_string[string]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+*/*+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|Output string
+a|link:#model_string[string]
+
+|===
+
+
+=== Test body with file schema
+
+----
+PUT /fake/body-with-file-schema
+----
+
+
+
+For this test, the body for this request much reference a schema named &#x60;File&#x60;.
+
+.cURL
+[source,bash]
+----
+curl -X PUT "http://petstore.swagger.io:80/v2/fake/body-with-file-schema"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**FileSchemaTestClass**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_FileSchemaTestClass[FileSchemaTestClass]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|Success
+a|
+
+|===
+
+
+=== Test body with query params
+
+----
+PUT /fake/body-with-query-params
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X PUT "http://petstore.swagger.io:80/v2/fake/body-with-query-params?query="
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**User**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_User[User]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+===== Query parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**query**
+
+a|[unstyled]
+
+* _Ex:_ `+query_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|Success
+a|
+
+|===
+
+
+=== To test \"client\" model
+
+----
+PATCH /fake
+----
+
+
+
+To test \&quot;client\&quot; model
+
+.cURL
+[source,bash]
+----
+curl -X PATCH "http://petstore.swagger.io:80/v2/fake"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**Client**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_Client[Client]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_Client[Client]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "client" : "client"
+}
+----
+
+=== Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+
+----
+POST /fake
+----
+
+
+
+Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+
+.cURL
+[source,bash]
+----
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Basic [[basicHash]]" "http://petstore.swagger.io:80/v2/fake"
+----
+
+==== Scopes
+* none
+
+==== Parameters
+
+===== Consumes
+
+* `+application/x-www-form-urlencoded+`
+
+
+
+
+===== Form parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**integer**
+
+a|[unstyled]
+* None
+* _Ex:_ `+56+`
+[none]
+
+
+
+** [small]#_minimum:_ `10` (inclusive)#
+** [small]#_maximum:_ `100` (inclusive)#
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Integer# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**int32**
+
+a|[unstyled]
+* None
+* _Ex:_ `+56+`
+[none]
+
+
+
+** [small]#_minimum:_ `20` (inclusive)#
+** [small]#_maximum:_ `200` (inclusive)#
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Integer# (int32)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**int64**
+
+a|[unstyled]
+* None
+* _Ex:_ `+789+`
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**number**
+
+a|[unstyled]
+* None
+* _Ex:_ `+8.14+`
+[none]
+** [small]#_[red]##required##_#
+
+
+** [small]#_minimum:_ `32.1` (inclusive)#
+** [small]#_maximum:_ `543.2` (inclusive)#
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#BigDecimal# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**float**
+
+a|[unstyled]
+* None
+* _Ex:_ `+3.4+`
+[none]
+
+
+
+
+** [small]#_maximum:_ `987.6` (inclusive)#
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Float# (float)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**double**
+
+a|[unstyled]
+* None
+* _Ex:_ `+1.2+`
+[none]
+** [small]#_[red]##required##_#
+
+
+** [small]#_minimum:_ `67.8` (inclusive)#
+** [small]#_maximum:_ `123.4` (inclusive)#
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Double# (double)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**string**
+
+a|[unstyled]
+* None
+* _Ex:_ `+string_example+`
+[none]
+
+
+
+
+
+
+
+
+
+** [small]#_pattern:_ `/[a-z]/i`#
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**pattern_without_delimiter**
+
+a|[unstyled]
+* None
+* _Ex:_ `+patternWithoutDelimiter_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+** [small]#_pattern:_ `/^[A-Z].*/`#
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**byte**
+
+a|[unstyled]
+* None
+* _Ex:_ `+BYTE_ARRAY_DATA_HERE+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#byte[]# (byte)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**binary**
+
+a|[unstyled]
+* None
+* _Ex:_ `+BINARY_DATA_HERE+`
+
+a|
+
+`[small]##[green]#File# (binary)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**date**
+
+a|[unstyled]
+* None
+* _Ex:_ `+2013-10-20+`
+
+a|
+
+`[small]##[green]#date# (date)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**dateTime**
+
+a|[unstyled]
+* None
+* _Ex:_ `+2013-10-20T19:20:30+01:00+`
+
+a|
+
+`[small]##[green]#Date# (date-time)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**password**
+
+a|[unstyled]
+* None
+* _Ex:_ `+password_example+`
+[none]
+
+
+
+
+
+** [small]#_minLength:_ `10`#
+** [small]#_maxLength:_ `64`#
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# (password)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**callback**
+
+a|[unstyled]
+* None
+* _Ex:_ `+callback_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Invalid username supplied
+a|
+|404
+|User not found
+a|
+
+|===
+
+
+=== To test enum parameters
+
+----
+GET /fake
+----
+
+
+
+To test enum parameters
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/fake?enum_query_string_array=&enum_query_string=&enum_query_integer=&enum_query_double="
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/x-www-form-urlencoded+`
+
+
+===== Header parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**enum_header_string_array**
+
+a|[unstyled]
+* Header parameter enum test (string array)
+
+
+a|
+
+`[small]##[green]#List# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**enum_header_string**
+
+a|[unstyled]
+* Header parameter enum test (string)
+* _Ex:_ `+enumHeaderString_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+-efg+`
+
+
+
+
+
+
+
+|===
+
+
+===== Form parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**enum_form_string_array**
+
+a|[unstyled]
+
+* _Ex:_ `+enumFormStringArray_example+`
+
+a|
+
+`[small]##[green]#List# ##`
+
+a|`+$+`
+
+
+
+
+
+
+
+a|
+**enum_form_string**
+
+a|[unstyled]
+* Form parameter enum test (string)
+* _Ex:_ `+enumFormString_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+-efg+`
+
+
+
+
+
+
+
+|===
+
+
+===== Query parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**enum_query_string_array**
+
+a|[unstyled]
+* Query parameter enum test (string array)
+
+
+a|
+
+`[small]##[green]#List# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**enum_query_string**
+
+a|[unstyled]
+* Query parameter enum test (string)
+* _Ex:_ `+enumQueryString_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+-efg+`
+
+
+
+
+
+
+
+a|
+**enum_query_integer**
+
+a|[unstyled]
+* Query parameter enum test (double)
+* _Ex:_ `+56+`
+
+a|
+
+`[small]##[green]#Integer# (int32)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**enum_query_double**
+
+a|[unstyled]
+* Query parameter enum test (double)
+* _Ex:_ `+1.2+`
+
+a|
+
+`[small]##[green]#Double# (double)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Invalid request
+a|
+|404
+|Not found
+a|
+
+|===
+
+
+=== Fake endpoint to test group parameters (optional)
+
+----
+DELETE /fake
+----
+
+
+
+Fake endpoint to test group parameters (optional)
+
+.cURL
+[source,bash]
+----
+curl -X DELETE -H "Authorization: Basic [[basicHash]]" "http://petstore.swagger.io:80/v2/fake?required_string_group=&required_int64_group=&string_group=&int64_group="
+----
+
+==== Scopes
+* none
+
+==== Parameters
+
+
+
+===== Header parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**required_boolean_group**
+
+a|[unstyled]
+* Required Boolean in group parameters
+* _Ex:_ `+true+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Boolean# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**boolean_group**
+
+a|[unstyled]
+* Boolean in group parameters
+* _Ex:_ `+true+`
+
+a|
+
+`[small]##[green]#Boolean# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+
+===== Query parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**required_string_group**
+
+a|[unstyled]
+* Required String in group parameters
+* _Ex:_ `+56+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Integer# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**required_int64_group**
+
+a|[unstyled]
+* Required Integer in group parameters
+* _Ex:_ `+789+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**string_group**
+
+a|[unstyled]
+* String in group parameters
+* _Ex:_ `+56+`
+
+a|
+
+`[small]##[green]#Integer# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**int64_group**
+
+a|[unstyled]
+* Integer in group parameters
+* _Ex:_ `+789+`
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Someting wrong
+a|
+
+|===
+
+
+=== test inline additionalProperties
+
+----
+POST /fake/inline-additionalProperties
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/fake/inline-additionalProperties"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**request_body**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_string[string]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|
+
+|===
+
+
+=== test json serialization of form data
+
+----
+GET /fake/jsonFormData
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/fake/jsonFormData"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/x-www-form-urlencoded+`
+
+
+
+
+===== Form parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**param**
+
+a|[unstyled]
+* field1
+* _Ex:_ `+param_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**param2**
+
+a|[unstyled]
+* field2
+* _Ex:_ `+param2_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|
+
+|===
+
+
+
+== FakeClassnameTags123
+
+=== To test class name in snake case
+
+----
+PATCH /fake_classname_test
+----
+
+
+
+To test class name in snake case
+
+.cURL
+[source,bash]
+----
+curl -X PATCH "http://petstore.swagger.io:80/v2/fake_classname_test"
+----
+
+==== Scopes
+* none
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**Client**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_Client[Client]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_Client[Client]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "client" : "client"
+}
+----
+
+
+== Pet
+
+=== Add a new pet to the store
+
+----
+POST /pet
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/pet"
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+* `+application/xml+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**Pet**
+
+a|[unstyled]
+
+* _Ex:_ `+{&quot;foo&quot;:&quot;bar&quot;}+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_Pet[Pet]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|405
+|Invalid input
+a|
+
+|===
+
+
+=== Deletes a pet
+
+----
+DELETE /pet/{petId}
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X DELETE "http://petstore.swagger.io:80/v2/pet/{petId}"
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**petId**
+
+a|[unstyled]
+* Pet id to delete
+* _Ex:_ `+789+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+===== Header parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**api_key**
+
+a|[unstyled]
+
+* _Ex:_ `+apiKey_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Invalid pet value
+a|
+
+|===
+
+
+=== Finds Pets by status
+
+----
+GET /pet/findByStatus
+----
+
+
+
+Multiple status values can be provided with comma separated strings
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/pet/findByStatus?status="
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+
+
+
+
+
+
+===== Query parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**status**
+
+a|[unstyled]
+* Status values that need to be considered for filter
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#List# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+==== Responses
+
+===== Produces
+
+* `+application/xml+`
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|array[link:#model_Pet[Pet]]
+|400
+|Invalid status value
+a|
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "photoUrls" : [ "photoUrls", "photoUrls" ],
+  "name" : "doggie",
+  "id" : 0,
+  "category" : {
+    "name" : "default-name",
+    "id" : 6
+  },
+  "tags" : [ {
+    "name" : "name",
+    "id" : 1
+  }, {
+    "name" : "name",
+    "id" : 1
+  } ],
+  "status" : "available"
+}
+----
+
+.Content-Type: application/xml
+[source,xml]
+----
+<Pet>
+  <id>123456789</id>
+  <name>doggie</name>
+  <photoUrls>
+    <photoUrls>aeiou</photoUrls>
+  </photoUrls>
+  <tags>
+  </tags>
+  <status>aeiou</status>
+</Pet>
+----
+
+=== Finds Pets by tags
+
+----
+GET /pet/findByTags
+----
+
+_[red]#@Deprecated#_
+
+Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/pet/findByTags?tags="
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+
+
+
+
+
+
+===== Query parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**tags**
+
+a|[unstyled]
+* Tags to filter by
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#List# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+==== Responses
+
+===== Produces
+
+* `+application/xml+`
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|array[link:#model_Pet[Pet]]
+|400
+|Invalid tag value
+a|
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "photoUrls" : [ "photoUrls", "photoUrls" ],
+  "name" : "doggie",
+  "id" : 0,
+  "category" : {
+    "name" : "default-name",
+    "id" : 6
+  },
+  "tags" : [ {
+    "name" : "name",
+    "id" : 1
+  }, {
+    "name" : "name",
+    "id" : 1
+  } ],
+  "status" : "available"
+}
+----
+
+.Content-Type: application/xml
+[source,xml]
+----
+<Pet>
+  <id>123456789</id>
+  <name>doggie</name>
+  <photoUrls>
+    <photoUrls>aeiou</photoUrls>
+  </photoUrls>
+  <tags>
+  </tags>
+  <status>aeiou</status>
+</Pet>
+----
+
+=== Find pet by ID
+
+----
+GET /pet/{petId}
+----
+
+
+
+Returns a single pet
+
+.cURL
+[source,bash]
+----
+curl -X GET -H "api_key: [[apiKey]]" "http://petstore.swagger.io:80/v2/pet/{petId}"
+----
+
+==== Scopes
+* none
+
+==== Parameters
+
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**petId**
+
+a|[unstyled]
+* ID of pet to return
+* _Ex:_ `+789+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/xml+`
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_Pet[Pet]
+|400
+|Invalid ID supplied
+a|
+|404
+|Pet not found
+a|
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "photoUrls" : [ "photoUrls", "photoUrls" ],
+  "name" : "doggie",
+  "id" : 0,
+  "category" : {
+    "name" : "default-name",
+    "id" : 6
+  },
+  "tags" : [ {
+    "name" : "name",
+    "id" : 1
+  }, {
+    "name" : "name",
+    "id" : 1
+  } ],
+  "status" : "available"
+}
+----
+
+.Content-Type: application/xml
+[source,xml]
+----
+<Pet>
+  <id>123456789</id>
+  <name>doggie</name>
+  <photoUrls>
+    <photoUrls>aeiou</photoUrls>
+  </photoUrls>
+  <tags>
+  </tags>
+  <status>aeiou</status>
+</Pet>
+----
+
+=== Update an existing pet
+
+----
+PUT /pet
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X PUT "http://petstore.swagger.io:80/v2/pet"
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+* `+application/xml+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**Pet**
+
+a|[unstyled]
+
+* _Ex:_ `+{&quot;foo&quot;:&quot;bar&quot;}+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_Pet[Pet]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Invalid ID supplied
+a|
+|404
+|Pet not found
+a|
+|405
+|Validation exception
+a|
+
+|===
+
+
+=== Updates a pet in the store with form data
+
+----
+POST /pet/{petId}
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/pet/{petId}"
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/x-www-form-urlencoded+`
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**petId**
+
+a|[unstyled]
+* ID of pet that needs to be updated
+* _Ex:_ `+789+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+===== Form parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**name**
+
+a|[unstyled]
+* Updated name of the pet
+* _Ex:_ `+name_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**status**
+
+a|[unstyled]
+* Updated status of the pet
+* _Ex:_ `+status_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|405
+|Invalid input
+a|
+
+|===
+
+
+=== uploads an image
+
+----
+POST /pet/{petId}/uploadImage
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/pet/{petId}/uploadImage"
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+===== Consumes
+
+* `+multipart/form-data+`
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**petId**
+
+a|[unstyled]
+* ID of pet to update
+* _Ex:_ `+789+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+===== Form parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**additionalMetadata**
+
+a|[unstyled]
+* Additional data to pass to server
+* _Ex:_ `+additionalMetadata_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**file**
+
+a|[unstyled]
+* file to upload
+* _Ex:_ `+BINARY_DATA_HERE+`
+
+a|
+
+`[small]##[green]#File# (binary)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_ApiResponse[ApiResponse]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "code" : 0,
+  "type" : "type",
+  "message" : "message"
+}
+----
+
+=== uploads an image (required)
+
+----
+POST /fake/{petId}/uploadImageWithRequiredFile
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/fake/{petId}/uploadImageWithRequiredFile"
+----
+
+==== Scopes
+* `write:pets` : 
+* `read:pets` : 
+
+
+==== Parameters
+
+===== Consumes
+
+* `+multipart/form-data+`
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**petId**
+
+a|[unstyled]
+* ID of pet to update
+* _Ex:_ `+789+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+===== Form parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**additionalMetadata**
+
+a|[unstyled]
+* Additional data to pass to server
+* _Ex:_ `+additionalMetadata_example+`
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+a|
+**requiredFile**
+
+a|[unstyled]
+* file to upload
+* _Ex:_ `+BINARY_DATA_HERE+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#File# (binary)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_ApiResponse[ApiResponse]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "code" : 0,
+  "type" : "type",
+  "message" : "message"
+}
+----
+
+
+== Store
+
+=== Delete purchase order by ID
+
+----
+DELETE /store/order/{order_id}
+----
+
+
+
+For valid response try integer IDs with value &lt; 1000. Anything above 1000 or nonintegers will generate API errors
+
+.cURL
+[source,bash]
+----
+curl -X DELETE "http://petstore.swagger.io:80/v2/store/order/{order_id}"
+----
+
+
+==== Parameters
+
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**order_id**
+
+a|[unstyled]
+* ID of the order that needs to be deleted
+* _Ex:_ `+orderId_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Invalid ID supplied
+a|
+|404
+|Order not found
+a|
+
+|===
+
+
+=== Returns pet inventories by status
+
+----
+GET /store/inventory
+----
+
+
+
+Returns a map of status codes to quantities
+
+.cURL
+[source,bash]
+----
+curl -X GET -H "api_key: [[apiKey]]" "http://petstore.swagger.io:80/v2/store/inventory"
+----
+
+==== Scopes
+* none
+
+==== Parameters
+
+
+
+
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|map[String, integer]
+
+|===
+
+
+=== Find purchase order by ID
+
+----
+GET /store/order/{order_id}
+----
+
+
+
+For valid response try integer IDs with value &lt;&#x3D; 5 or &gt; 10. Other values will generated exceptions
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/store/order/{order_id}"
+----
+
+
+==== Parameters
+
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**order_id**
+
+a|[unstyled]
+* ID of pet that needs to be fetched
+* _Ex:_ `+789+`
+[none]
+** [small]#_[red]##required##_#
+
+
+** [small]#_minimum:_ `1` (inclusive)#
+** [small]#_maximum:_ `5` (inclusive)#
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#Long# (int64)##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/xml+`
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_Order[Order]
+|400
+|Invalid ID supplied
+a|
+|404
+|Order not found
+a|link:#model_ApiResponse[ApiResponse]
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "petId" : 6,
+  "quantity" : 1,
+  "id" : 0,
+  "shipDate" : "2000-01-23T04:56:07.000+00:00",
+  "complete" : false,
+  "status" : "placed"
+}
+----
+
+.Content-Type: application/xml
+[source,xml]
+----
+<Order>
+  <id>123456789</id>
+  <petId>123456789</petId>
+  <quantity>123</quantity>
+  <shipDate>2000-01-23T04:56:07.000Z</shipDate>
+  <status>aeiou</status>
+  <complete>true</complete>
+</Order>
+----
+
+=== Place an order for a pet
+
+----
+POST /store/order
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/store/order"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**Order**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_Order[Order]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/xml+`
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_Order[Order]
+|400
+|Invalid Order
+a|
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "petId" : 6,
+  "quantity" : 1,
+  "id" : 0,
+  "shipDate" : "2000-01-23T04:56:07.000+00:00",
+  "complete" : false,
+  "status" : "placed"
+}
+----
+
+.Content-Type: application/xml
+[source,xml]
+----
+<Order>
+  <id>123456789</id>
+  <petId>123456789</petId>
+  <quantity>123</quantity>
+  <shipDate>2000-01-23T04:56:07.000Z</shipDate>
+  <status>aeiou</status>
+  <complete>true</complete>
+</Order>
+----
+
+
+== User
+
+=== Create user
+
+----
+POST /user
+----
+
+
+
+This can only be done by the logged in user.
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/user"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**User**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_User[User]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|0
+|successful operation
+a|
+
+|===
+
+
+=== Creates list of users with given input array
+
+----
+POST /user/createWithArray
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/user/createWithArray"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**User**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_array[array]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|0
+|successful operation
+a|
+
+|===
+
+
+=== Creates list of users with given input array
+
+----
+POST /user/createWithList
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X POST "http://petstore.swagger.io:80/v2/user/createWithList"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**User**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_array[array]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|0
+|successful operation
+a|
+
+|===
+
+
+=== Delete user
+
+----
+DELETE /user/{username}
+----
+
+
+
+This can only be done by the logged in user.
+
+.cURL
+[source,bash]
+----
+curl -X DELETE "http://petstore.swagger.io:80/v2/user/{username}"
+----
+
+
+==== Parameters
+
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**username**
+
+a|[unstyled]
+* The name that needs to be deleted
+* _Ex:_ `+username_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Invalid username supplied
+a|
+|404
+|User not found
+a|
+
+|===
+
+
+=== Get user by user name
+
+----
+GET /user/{username}
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/user/{username}"
+----
+
+
+==== Parameters
+
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**username**
+
+a|[unstyled]
+* The name that needs to be fetched. Use user1 for testing.
+* _Ex:_ `+username_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+
+
+
+
+==== Responses
+
+===== Produces
+
+* `+application/xml+`
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_User[User]
+|400
+|Invalid username supplied
+a|
+|404
+|User not found
+a|
+
+|===
+
+===== Example data
+
+.Content-Type: application/json
+[source,json]
+----
+{
+  "firstName" : "firstName",
+  "lastName" : "lastName",
+  "password" : "password",
+  "userStatus" : 6,
+  "phone" : "phone",
+  "id" : 0,
+  "email" : "email",
+  "username" : "bartTheMan"
+}
+----
+
+.Content-Type: application/xml
+[source,xml]
+----
+<User>
+  <id>123456789</id>
+  <username>bartTheMan</username>
+  <firstName>aeiou</firstName>
+  <lastName>aeiou</lastName>
+  <email>aeiou</email>
+  <password>aeiou</password>
+  <phone>aeiou</phone>
+  <userStatus>123</userStatus>
+</User>
+----
+
+=== Logs user into the system
+
+----
+GET /user/login
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/user/login?username=&password="
+----
+
+
+==== Parameters
+
+
+
+
+
+
+
+===== Query parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**username**
+
+a|[unstyled]
+* The user name for login
+* _Ex:_ `+bananas are for monkeys+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+*:*+`
+
+
+
+
+
+
+
+a|
+**password**
+
+a|[unstyled]
+* The password for login in clear text
+* _Ex:_ `+password_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+==== Responses
+
+===== Produces
+
+* `+application/xml+`
+* `+application/json+`
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|200
+|successful operation
+a|link:#model_string[string]
+|400
+|Invalid username/password supplied
+a|
+
+|===
+
+
+=== Logs out current logged in user session
+
+----
+GET /user/logout
+----
+
+
+
+
+
+.cURL
+[source,bash]
+----
+curl -X GET "http://petstore.swagger.io:80/v2/user/logout"
+----
+
+
+==== Parameters
+
+
+
+
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|0
+|successful operation
+a|
+
+|===
+
+
+=== Updated user
+
+----
+PUT /user/{username}
+----
+
+
+
+This can only be done by the logged in user.
+
+.cURL
+[source,bash]
+----
+curl -X PUT "http://petstore.swagger.io:80/v2/user/{username}"
+----
+
+
+==== Parameters
+
+===== Consumes
+
+* `+application/json+`
+
+===== Path parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**username**
+
+a|[unstyled]
+* name that need to be deleted
+* _Ex:_ `+username_example+`
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+
+`[small]##[green]#String# ##`
+
+a|`+null+`
+
+
+
+
+
+
+
+|===
+
+
+===== Body parameters
+
+[cols="1,6,2m,1m",options="header"]
+|===
+|Name|Description|Schema|Default
+
+a|
+**User**
+
+a|[unstyled]
+
+
+[none]
+** [small]#_[red]##required##_#
+
+
+
+
+
+
+
+
+
+
+
+
+a|
+link:#model_User[User]
+
+
+a|
+
+
+
+
+
+
+|===
+
+
+
+
+==== Responses
+
+
+[cols="1m,4,2m",options="header"]
+|===
+|Status|Description|Schema
+
+|400
+|Invalid user supplied
+a|
+|404
+|User not found
+a|
+
+|===
+
+
