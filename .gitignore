@@ -10,6 +10,7 @@ modules/openapi-generator-gradle-plugin/bin/
 !modules/openapi-generator-cli/src/main/resources/version.properties
 .project
 .classpath
+pom.xml.versionsBackup
 lib/*
 build/*
 generated-files/*
@@ -46,6 +47,9 @@ test-output/
 # website
 website/build/
 website/package-lock.json
+
+# Require force flag to add generated samples
+samples/
 
 # scalatra
 samples/server-generator/scalatra/output
