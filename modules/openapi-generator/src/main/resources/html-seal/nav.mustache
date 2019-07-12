@@ -1,0 +1,81 @@
+<nav class="nav">
+    <ul class="">
+        <li class="sidebar-nav-items"><a href="#app-name">{{{appName}}}</a></li>
+        {{#hasAuthMethods}}
+        <li class="sidebar-nav-items"><a href="#access">Access</a></li>
+        {{/hasAuthMethods}}
+    </ul>
+    <h5 class="sidebar-nav-heading"><a href="#resources">Resources</a></h5>
+{{#apiInfo}}
+    {{#apis}}
+    {{#operations}}
+    <ul class="nav-resource">
+        <li class="sidebar-nav-items">
+            <a href="#api-{{baseName}}">{{baseName}}</a>
+            <ul>
+            {{#operation}}
+                {{#vendorExtensions.x-codegen-shouldInclude}}
+                <li class="sidebar-nav-item">
+                    <a href="#api-{{baseName}}-{{nickname}}">{{{summary}}}{{^summary}}{{vendorExtensions.x-codegen-operationIdAsSentence}}{{/summary}}</a>
+                </li>
+                {{/vendorExtensions.x-codegen-shouldInclude}}
+            {{/operation}}
+            </ul>
+        </li>
+    </ul>
+    <!--h5 class="sidebar-nav-heading"><a href="#api-{{baseName}}">{{baseName}}</a></h5-->
+
+    {{/operations}}
+    {{/apis}}
+{{/apiInfo}}
+    <h5 class="sidebar-nav-heading"><a href="#models">Models</a></h5>
+    {{#models}}
+    <ul>
+    {{#model}}
+    {{#vendorExtensions.x-codegen-shouldInclude}}
+        <li class="sidebar-nav-items"><a href="#model-{{name}}">{{name}}</a></li>
+    {{/vendorExtensions.x-codegen-shouldInclude}}
+    {{/model}}
+    </ul>
+    {{/models}}
+    <script type="text/javascript">
+
+        nav = document.querySelector("nav.nav");
+
+        function addClass(selector, styleClass) {
+            nav.querySelectorAll(selector).forEach(function (value) {
+              value.classList.add(styleClass);
+            });
+        }
+
+        function removeClass(selector, styleClass) {
+            nav.querySelectorAll(selector).forEach(function (value) {
+                value.classList.remove(styleClass);
+            });
+        }
+
+        document.querySelectorAll("nav.nav > h5 > a").forEach(function(el) {el.addEventListener("click", function (e) {
+            addClass(".sidebar-nav-items > ul", "hidden");
+        })});
+
+        document.querySelectorAll("nav.nav > ul > li > a").forEach(function(el) {el.addEventListener("click", function (e) {
+
+            removeClass(".sidebar-nav-items .selected", "selected");
+            addClass(".sidebar-nav-items > ul", "hidden");
+
+            e.currentTarget.classList.add("selected");
+            ul = e.currentTarget.parentElement.querySelector("ul");
+            if(ul) {
+                ul.classList.remove("hidden");
+            }
+
+        })});
+
+        document.querySelectorAll("nav.nav > ul > li > ul > li > a").forEach(function(el) {el.addEventListener("click", function (e) {
+            removeClass(".sidebar-nav-items .selected", "selected");
+            e.currentTarget.classList.add("selected");
+        })});
+
+        addClass(".sidebar-nav-items > ul", "hidden");
+    </script>
+</nav>

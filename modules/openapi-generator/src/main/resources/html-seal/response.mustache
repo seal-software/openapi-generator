@@ -1,0 +1,13 @@
+<div class="api-ref-op-container">
+    <div class="api-ref-op-item">
+        <div class="op-label monospace">{{{code}}}</div>
+        <div class="op-attr">
+            {{#dataType}}
+            <div>{{#simpleType}}{{#primitiveType}}{{baseType}}{{/primitiveType}}{{^primitiveType}}<a href="#model-{{baseType}}">{{baseType}}</a>{{/primitiveType}}{{/simpleType}}{{^simpleType}}{{containerType}}[{{^isMapContainer}}{{#primitiveType}}{{baseType}}{{/primitiveType}}{{^primitiveType}}<a href="#model-{{baseType}}">{{baseType}}</a>{{/primitiveType}}{{/isMapContainer}}{{#isMapContainer}}string, {{#primitiveType}}{{baseType}}{{/primitiveType}}{{^primitiveType}}{{schema.additionalProperties.type}}{{/primitiveType}}{{/isMapContainer}}]{{/simpleType}}</div>
+            {{/dataType}}
+        </div>
+    </div>
+    <div class="api-ref-op-item">
+        <p>{{{message}}}</p>
+    </div>
+</div>

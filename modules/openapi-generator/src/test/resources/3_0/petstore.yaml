@@ -206,6 +206,7 @@ paths:
                 status:
                   description: Updated status of the pet
                   type: string
+                  deprecated: true
     delete:
       tags:
         - pet
@@ -225,6 +226,7 @@ paths:
           schema:
             type: integer
             format: int64
+          deprecated: true
       responses:
         '400':
           description: Invalid pet value
@@ -668,6 +670,7 @@ components:
       title: Pet Tag
       description: A tag for a pet
       type: object
+      deprecated: true
       properties:
         id:
           type: integer
@@ -706,6 +709,11 @@ components:
             wrapped: true
           items:
             $ref: '#/components/schemas/Tag'
+        numbers:
+            type: array
+            items:
+              type: integer
+              format: int64
         status:
           type: string
           description: pet status in the store

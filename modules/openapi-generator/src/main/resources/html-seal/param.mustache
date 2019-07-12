@@ -1,0 +1,17 @@
+<div class="api-ref-op-container">
+    <div class="api-ref-op-item">
+        <div class="op-label monospace">{{paramName}}</div>
+        <div class="op-attr">
+            <div>in: {{vendorExtensions.x-codegen-paramIn}}</div>
+            <div>{{>data-type}}</div>
+            {{>constraints}}
+            {{#deprecated}}<div class="deprecated">deprecated</div>{{/deprecated}}
+            {{#vendorExtensions.x-codegen-deprecated}}<div class="deprecated">deprecated</div>{{/vendorExtensions.x-codegen-deprecated}}
+        </div>
+    </div>
+    <div class="api-ref-op-item">
+        {{#unescapedDescription}}<p>{{{unescapedDescription}}}</p>{{/unescapedDescription}}
+        {{#defaultValue}}<p><i>Default:</i> <code>{{{defaultValue}}}</code></p>{{/defaultValue}}
+        {{#vendorExtensions.x-codegen-hasExample}}<p><i>Ex:</i> <code>{{example}}</code></p>{{/vendorExtensions.x-codegen-hasExample}}
+    </div>
+</div>

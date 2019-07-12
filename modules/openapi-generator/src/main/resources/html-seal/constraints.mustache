@@ -1,0 +1,14 @@
+{{#vendorExtensions.x-codegen-hasConstraints}}
+{{#min}}<div>min: {{min}}</div>{{/min}}
+{{#max}}<div>max: {{max}}</div>{{/max}}
+{{#minimum}}<div>minimum: {{minimum}} ({{#exclusiveMinimum}}exclusive{{/exclusiveMinimum}}{{^exclusiveMinimum}}inclusive{{/exclusiveMinimum}})</div>{{/minimum}}
+{{#maximum}}<div>maximum: {{maximum}} ({{#exclusiveMaximum}}exclusive{{/exclusiveMaximum}}{{^exclusiveMaximum}}inclusive{{/exclusiveMaximum}})</div>{{/maximum}}
+{{#minLength}}<div>minLength: {{minLength}}</div>{{/minLength}}
+{{#maxLength}}<div>maxLength: {{maxLength}}</div>{{/maxLength}}
+{{#minItems}}<div>minItems: {{minItems}}</div>{{/minItems}}
+{{#maxItems}}<div>maxItems: {{maxItems}}</div>{{/maxItems}}
+{{#pattern}}<div>pattern: {{{pattern}}}</div>{{/pattern}}
+{{/vendorExtensions.x-codegen-hasConstraints}}
+
+{{#required}}<div class="required">required</div>{{/required}}
+{{^required}}<div>optional</div>{{/required}}

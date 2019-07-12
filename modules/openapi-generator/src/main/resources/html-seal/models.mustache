@@ -1,0 +1,58 @@
+<section class="models">
+{{#models}}
+{{#model}}
+{{#vendorExtensions.x-codegen-shouldInclude}}
+
+<div class="api-ref-container">
+    <div class="api-ref-item api-ref-left ">
+    <h2 id="model-{{name}}">
+        {{name}}{{#title}} - {{{title}}}{{/title}}
+        {{#deprecated}}<div class="deprecated">deprecated</div> {{/deprecated}}
+        {{#vendorExtensions.x-codegen-deprecated}}<div class="deprecated">deprecated</div>{{/vendorExtensions.x-codegen-deprecated}}
+    </h2>
+
+    {{#unescapedDescription}}<p>{{{unescapedDescription}}}</p>{{/unescapedDescription}}
+
+    <h4>Properties</h4>
+
+    <ul class="api-ref-params">
+    {{#vars}}
+    {{#vendorExtensions.x-codegen-shouldInclude}}
+        <li>
+            <div class="api-ref-op-container">
+                <div class="api-ref-op-item">
+
+                    <div class="op-label">{{baseName}}</div>
+                    <div class="op-attr">
+                        <div>{{>data-type}}</div>
+                        {{>constraints}}
+                    </div>
+                </div>
+                <div class="api-ref-op-item">
+                    {{#unescapedDescription}}<p>{{{unescapedDescription}}}</p>{{/unescapedDescription}}
+                    {{#isEnum}}
+                        <p><i>Enum: </i><code>{{_enum}}</code></p>
+                    {{/isEnum}}
+                    {{#vendorExtensions.x-codegen-hasExample}}<p><i>Example:</i> <code>{{example}}</code></p>{{/vendorExtensions.x-codegen-hasExample}}
+                </div>
+            </div>
+        </li>
+    {{/vendorExtensions.x-codegen-shouldInclude}}
+    {{/vars}}
+    </ul>
+</div>
+<div class="api-ref-item api-ref-right">
+    <div class="code-block">
+        <div class="top-bar">
+            Json Schema
+        </div>
+        <pre><code class="{{x-codegen-sourceType}} source lang-json">{{modelJson}}</code></pre>
+    </div>
+</div>
+</div>
+
+<div class="horizontal-divider"></div>
+{{/vendorExtensions.x-codegen-shouldInclude}}
+{{/model}}
+{{/models}}
+</section>

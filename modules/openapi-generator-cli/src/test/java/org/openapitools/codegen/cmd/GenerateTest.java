@@ -626,4 +626,13 @@ public class GenerateTest {
         setupAndRunTest("-i", "src/test/resources/swagger.yaml", "-g", "java", "-o", "src/main/java", false, null,
                 additionalParameters);
     }
+
+    // ags="generate -i modules/openapi-generator/src/test/resources/3_0/petstore-with-fake-endpoints-models-for-testing.yaml -g asciidoc  -o samples/asciidoc $@"
+    public static void main(String[] args) {
+        //OpenAPIGenerator.main(new String[]{"help", "generate"});
+        //System.out.println(System.getProperty("user.dir"));
+        //OpenAPIGenerator.main(new String[]{"generate", "-i", "modules/openapi-generator/src/test/resources/3_0/petstore.yaml", "-g", "html-seal", "-o", "target/html-seal"});
+        OpenAPIGenerator.main(new String[]{"generate", "-i", "modules/openapi-generator/src/test/resources/3_0/petstore.yaml", "-g", "html-seal", "-o", "target/html-seal", "--additional-properties", "logoUrl=/Users/dalbrekt/Downloads/seal-logo.jpg"});
+        //setupAndRunTest("-i", "src/test/resources/swagger.yaml", "-g", "asciidoc", "-o", "target/asciidoc", false, null);
+    }
 }
